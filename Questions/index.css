@@ -1,3 +1,8 @@
+* {
+  font-family: cursive;
+  text-shadow: 1px 3px 35px -3px rgba(0, 0, 0, 0.55);
+}
+
 .question {
   display: flex;
   align-items: center;
@@ -17,6 +22,26 @@
 }
 
 h3 {
-  /* margin: 20px; */
   padding-left: 20px;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(239, 188, 255, 1) 0%,
+    rgba(169, 172, 255, 1) 100%
+  );
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    170deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(212, 255, 245, 1) 0%,
+    rgba(180, 118, 255, 1) 100%
+  );
+  border: 2px solid rgb(165, 137, 209);
+  border-radius: 10px;
+  padding-left: 15px;
 }

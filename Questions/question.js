@@ -21,17 +21,18 @@ function createquestion(question_statement, option, answer) {
     opdiv.textContent = count + ". " + op;
     if (count === answer)
       opdiv.addEventListener("click", function () {
-        opdiv.style.backgroundColor = "green";
-        opdiv.style.color = "white";
+        opdiv.style.background = "rgb(146, 255, 124)";
+        opdiv.style.color = "rgb(21, 124, 0)";
         // alert("This is correct option");
       });
     else
       opdiv.addEventListener("click", function () {
-        opdiv.style.backgroundColor = "red";
+        opdiv.style.background = "rgb(255, 93, 93)";
         opdiv.style.color = "white";
         // alert("This is Wrong option");
       });
   }
+  div.appendChild(document.createElement("br"));
 }
 debugger;
 for (const options of q) {
