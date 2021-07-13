@@ -1,0 +1,17 @@
+.hide {
+  display: none;
+}
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.p1 {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background-color: black;
+}
