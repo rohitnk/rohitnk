@@ -8,7 +8,7 @@
   align-items: center;
   text-align: center;
   height: 50px;
-  width: 1000px;
+  width: 700px;
   border: 2px solid rgb(99, 211, 255);
   border-radius: 10px;
 }
@@ -22,6 +22,8 @@
 }
 
 h3 {
+  box-shadow: 18px 16px 22px 1px rgba(0, 0, 0, 0.39);
+  text-shadow: 0px 0px 7px rgba(150, 150, 150, 1);
   padding-left: 20px;
   background: rgb(131, 58, 180);
   background: linear-gradient(
@@ -33,6 +35,8 @@ h3 {
 }
 
 .option {
+  box-shadow: 18px 16px 22px 1px rgba(0, 0, 0, 0.39);
+  text-shadow: 0px 0px 7px rgba(150, 150, 150, 1);
   display: flex;
   align-items: center;
   background: linear-gradient(
@@ -44,4 +48,18 @@ h3 {
   border: 2px solid rgb(165, 137, 209);
   border-radius: 10px;
   padding-left: 15px;
+}
+
+.questionSet {
+  border: 2px solid black;
+  background-color: rgb(204, 180, 206);
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 800px;
+  border-radius: 15px;
+}
+
+.option:hover {
+  transition: 0.6s ease-in-out;
+  background: rgb(89, 152, 235);
 }

@@ -7,6 +7,7 @@ function createquestion(question_statement, option, answer) {
   const app = document.getElementById("app");
   const div = document.createElement("div");
   app.appendChild(div);
+  div.setAttribute("class", "questionSet");
   const questionStatement = document.createElement("h3");
   questionStatement.setAttribute("class", "question");
   div.appendChild(questionStatement);
