@@ -4,6 +4,7 @@
 }
 
 .question {
+  position: relative;
   display: flex;
   align-items: center;
   text-align: center;
@@ -51,6 +52,8 @@ h3 {
 }
 
 .questionSet {
+  transform: translate(-50%, -50%);
+  margin-left: 50%;
   border: 2px solid black;
   background-color: rgb(204, 180, 206);
   margin-bottom: 20px;
