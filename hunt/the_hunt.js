@@ -61,3 +61,5 @@ function game() {
   time = setInterval(showTime, 1000);
 }
 document.getElementById("gam").addEventListener("click", game);
+
+dfj;
