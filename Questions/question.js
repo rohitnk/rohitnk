@@ -35,7 +35,6 @@ function createquestion(question_statement, option, answer) {
   }
   div.appendChild(document.createElement("br"));
 }
-debugger;
 for (const options of q) {
   createquestion(options.question, options.answers, options.correctIndex);
 }
