@@ -7,8 +7,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="index.css" />
   </head>
-  <body onclick="myFunction(event)">
-    <div class="main" id="table"></div>
+  <body>
+    <div class="controlPanel">
+      <div class="playerInfo">
+        <span> <b> Player 1</b></span>
+        <div class="player" id="player1"></div>
+      </div>
+      <div class="playerInfo">
+        <span> <b> Player 2</b></span>
+        <div class="player" id="player2"></div>
+      </div>
+      <span id="msg"><b>Enter No. of Matches:</b></span>
+      <input type="number" id="matches" />
+      <button onclick="play()">Play</button>
+      <button onclick="masterReset()" id="reset">Reset</button>
+    </div>
+    <div class="main" id="table" onclick="myFunction(event)"></div>
     <script src="./index.js"></script>
   </body>
 </html>
