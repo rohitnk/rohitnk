@@ -18,9 +18,16 @@
         <div class="player" id="player2"></div>
       </div>
       <span id="msg"><b>Enter No. of Matches:</b></span>
-      <input type="number" id="matches" />
+      <input type="number" id="matches" value="0" />
       <button onclick="play()">Play</button>
       <button onclick="masterReset()" id="reset">Reset</button>
+      <div id="wincount">
+        <p>
+          <span><b>SCORE</b></span>
+        </p>
+        <span>Player 1 :</span><span id="player1score"></span><br />
+        <span>Player 2 :</span><span id="player2score"></span><br />
+      </div>
     </div>
     <div class="main" id="table" onclick="myFunction(event)"></div>
     <script src="./index.js"></script>

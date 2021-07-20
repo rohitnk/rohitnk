@@ -1,7 +1,9 @@
 const table = document.getElementById("table");
 let m = document.getElementById("matches");
-let matches = m.value;
-console.log(matches);
+let matches;
+const p1sore = document.getElementById("player1score");
+const p2sore = document.getElementById("player2score");
+// console.log(matches);
 for (let i = 1; i < 4; i++) {
   const tr = document.createElement("tr");
   tr.setAttribute("id", i);
@@ -12,8 +14,9 @@ for (let i = 1; i < 4; i++) {
     tr.appendChild(td);
   }
 }
-
-function MatchReset() {
+let player1Win = 0;
+let player2Win = 0;
+function matchReset() {
   player1 = true;
   player2 = false;
 
@@ -41,7 +44,7 @@ function MatchReset() {
     33: false,
   };
   count = 0;
-  gameStart = false;
+  // gameStart = false;
 
   for (let i = 1; i < 4; i++) {
     for (let j = 1; j < 4; j++) {
@@ -49,29 +52,29 @@ function MatchReset() {
       td.style.background = "white";
     }
   }
-  m.value = "";
+  p1sore.textContent = player1Win;
+  p2sore.textContent = player2Win;
 }
+
 function masterReset() {
-  MatchReset();
+  matchReset();
+  m.value = "0";
+  player1Win = 0;
+  player2Win = 0;
+  p1sore.textContent = player1Win;
+  p2sore.textContent = player2Win;
   m.disabled = false;
+  gameStart = false;
 }
+
 masterReset();
-let player1Win = 0;
-let player2Win = 0;
 
 function myFunction(event) {
-  let matches = m.value;
   console.log(matches);
-  // debugger;
-  // console.log(`before click the count is ${count}`);
   if (!gameStart) return;
-
   const clicked = event.target.id;
-  // console.log(clicked);
   if (clicked == "table") return;
   const toChange = document.getElementById(`${clicked}`);
-  matches--;
-  m.value = matches;
   if (player1) {
     if (clickCheck(p1, clicked, p2)) return;
     count++;
@@ -80,7 +83,7 @@ function myFunction(event) {
     if (winCheck(p1)) {
       player1Win++;
       hurray("Player 1");
-      gameStart = false;
+      checkMatches();
       return;
     }
     player1 = false;
@@ -93,20 +96,34 @@ function myFunction(event) {
     if (winCheck(p2)) {
       player2Win++;
       hurray("Player 2");
-      gameStart = false;
+      checkMatches();
       return;
     }
     player1 = true;
     player2 = false;
   }
-  // console.log(`after click the count is ${count}`);
   if (count === 9) {
+    matches--;
     setTimeout(function () {
+      m.value = matches;
       alert("match draw");
-      reset();
+      matchReset();
     }, 300);
-    gameStart = false;
+    checkMatches();
     return;
+  }
+}
+
+function checkMatches() {
+  if (matches === 0) {
+    setTimeout(function () {
+      if (player1Win > player2Win)
+        alert("The winner of the contest is Player 1");
+      else if (player2Win > player1Win)
+        alert("The winner of the contest is Player 2");
+      else alert("the contest is draw");
+      masterReset();
+    }, 310);
   }
 }
 
@@ -135,13 +152,20 @@ function winCheck(p) {
 }
 
 function hurray(p) {
+  matches--;
   setTimeout(function () {
+    m.value = matches;
     alert(`${p} won `);
-    reset();
+    matchReset();
   }, 300);
 }
-
 function play() {
+  if (gameStart) return;
+  matches = m.value;
+  if (matches == 0 || matches < 0) {
+    alert("please Enter the No. of matches to play........");
+    return;
+  }
   gameStart = true;
   m.disabled = true;
 }
