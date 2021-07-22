@@ -2,6 +2,7 @@ const table = document.getElementById("table");
 const msg = document.getElementById("msg");
 let m = document.getElementById("matches");
 let matches;
+////to check
 const p1sore = document.getElementById("player1score");
 const p2sore = document.getElementById("player2score");
 // console.log(matches);
