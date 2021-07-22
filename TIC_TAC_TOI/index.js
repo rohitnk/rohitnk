@@ -1,4 +1,5 @@
 const table = document.getElementById("table");
+const msg = document.getElementById("msg");
 let m = document.getElementById("matches");
 let matches;
 const p1sore = document.getElementById("player1score");
@@ -65,6 +66,7 @@ function masterReset() {
   p2sore.textContent = player2Win;
   m.disabled = false;
   gameStart = false;
+  msg.textContent = "Enter No. of Matches:";
 }
 
 masterReset();
@@ -166,6 +168,7 @@ function play() {
     alert("please Enter the No. of matches to play........");
     return;
   }
+  msg.textContent = "Matches Remaining :";
   gameStart = true;
   m.disabled = true;
 }
