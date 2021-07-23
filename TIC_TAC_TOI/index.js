@@ -49,8 +49,8 @@ function matchReset() {
     32: false,
     33: false,
   };
+
   count = 0;
-  // gameStart = false;
 
   p1sore.textContent = player1Win;
   p2sore.textContent = player2Win;
@@ -179,7 +179,7 @@ function hurray(p) {
 function play() {
   if (gameStart) return;
   matches = m.value;
-  if (matches == 0 || matches < 0) {
+  if (matches <= 0) {
     alert("please Enter the No. of matches to play........");
     return;
   }
