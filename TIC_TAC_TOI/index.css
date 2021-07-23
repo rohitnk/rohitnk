@@ -22,7 +22,7 @@ body {
   margin: 1rem auto;
   border-collapse: separate;
 }
-td,
+
 .player {
   box-shadow: 19px 22px 34px -2px rgba(0, 0, 0, 0.66);
   height: 100px;
@@ -32,11 +32,21 @@ td,
   border: 3px solid white;
   background: rgb(255, 249, 249);
 }
+td {
+  box-shadow: 19px 22px 34px -2px rgba(0, 0, 0, 0.66);
+  height: 100px;
+  width: 100px;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  border: 3px solid white;
+  /* background: white; */
+}
 
 td:hover,
 .player:hover {
   transition: 0.22s ease-in-out;
   transform: translate(3px, 3px);
+  background: var(--td-background-color);
 }
 
 .controlPanel {
@@ -128,4 +138,3 @@ span {
   background-color: rgb(73, 146, 255);
   border-radius: 25px;
 }
-

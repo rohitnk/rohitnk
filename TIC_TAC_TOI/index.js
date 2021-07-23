@@ -1,6 +1,7 @@
 const table = document.getElementById("table");
 const msg = document.getElementById("msg");
 let m = document.getElementById("matches");
+
 let matches;
 ////to check
 const p1sore = document.getElementById("player1score");
@@ -16,9 +17,12 @@ for (let i = 1; i < 4; i++) {
     tr.appendChild(td);
   }
 }
+
 let player1Win = 0;
 let player2Win = 0;
+
 function matchReset() {
+  resetBackground();
   player1 = true;
   player2 = false;
 
@@ -48,14 +52,20 @@ function matchReset() {
   count = 0;
   // gameStart = false;
 
+  p1sore.textContent = player1Win;
+  p2sore.textContent = player2Win;
+
+  changeHoverBackground();
+}
+
+function resetBackground() {
   for (let i = 1; i < 4; i++) {
     for (let j = 1; j < 4; j++) {
       td = document.getElementById(`${i}${j}`);
-      td.style.background = "white";
+      td.style.background = "";
+      td.style.setProperty("--td-background-color", "");
     }
   }
-  p1sore.textContent = player1Win;
-  p2sore.textContent = player2Win;
 }
 
 function masterReset() {
@@ -68,6 +78,7 @@ function masterReset() {
   m.disabled = false;
   gameStart = false;
   msg.textContent = "Enter No. of Matches:";
+  resetBackground();
 }
 
 masterReset();
@@ -91,6 +102,7 @@ function myFunction(event) {
     }
     player1 = false;
     player2 = true;
+    changeHoverBackground();
   } else {
     if (clickCheck(p2, clicked, p1)) return;
     count++;
@@ -104,6 +116,7 @@ function myFunction(event) {
     }
     player1 = true;
     player2 = false;
+    changeHoverBackground();
   }
   if (count === 9) {
     matches--;
@@ -162,6 +175,7 @@ function hurray(p) {
     matchReset();
   }, 300);
 }
+
 function play() {
   if (gameStart) return;
   matches = m.value;
@@ -172,4 +186,30 @@ function play() {
   msg.textContent = "Matches Remaining :";
   gameStart = true;
   m.disabled = true;
+  const tds = document.querySelectorAll("td");
+  tds.forEach((td) => {
+    td.style.setProperty(
+      "--td-background-color",
+      "linear-gradient(90deg, rgb(255 207 207) 30%, rgb(245 183 183) 100%)"
+    );
+  });
+}
+
+function changeHoverBackground() {
+  const tds = document.querySelectorAll("td");
+  if (player1 === true) {
+    tds.forEach((td) => {
+      td.style.setProperty(
+        "--td-background-color",
+        "linear-gradient(90deg, rgb(255 207 207) 30%, rgb(245 183 183) 100%)"
+      );
+    });
+  } else {
+    tds.forEach((td) => {
+      td.style.setProperty(
+        "--td-background-color",
+        "linear-gradient(90deg, rgb(228 249 198) 8%, rgb(131 255 149) 58%)"
+      );
+    });
+  }
 }
