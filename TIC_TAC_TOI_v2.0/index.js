@@ -199,12 +199,6 @@ function myFunction(event) {
   }
 }
 
-function clickCheck(px, clicked, py) {
-  if (py[clicked] || px[clicked]) return true;
-  px[clicked] = true;
-  return false;
-}
-
 function changeHoverBackground() {
   const tds = document.querySelectorAll("td");
   if (player1 === true) {
