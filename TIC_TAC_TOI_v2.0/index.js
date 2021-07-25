@@ -248,13 +248,6 @@ function mr() {
   player.masterReset();
 }
 
-// (function ($) {
-//   showMessage = function (message) {
-//     // "use strict";
-//     swal(message);
-//   };
-// })(jQuery);
-
 function showMessage(comment, message) {
   Swal.fire(comment, message);
 }
