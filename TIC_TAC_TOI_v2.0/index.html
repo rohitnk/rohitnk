@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="controlPanel">
+      <div class="playerInfo">
+        <span> <b> Player 1</b></span>
+        <div class="player" id="player1"></div>
+      </div>
+      <div class="playerInfo">
+        <span> <b> Player 2</b></span>
+        <div class="player" id="player2"></div>
+      </div>
+      <span id="msg"><b>Enter No. of Matches:</b></span>
+      <input type="number" id="matches" value="0" />
+      <button onclick="play()">Play</button>
+      <button onclick="mr()" id="reset">Reset</button>
+      <div id="wincount">
+        <p>
+          <span><b>SCORE</b></span>
+        </p>
+        <span>Player 1 :</span><span id="player1score"></span><br />
+        <span>Player 2 :</span><span id="player2score"></span><br />
+      </div>
+    </div>
+    <div class="main" id="table" onclick="myFunction(event)"></div>
+    <script src="./index.js"></script>
+  </body>
+</html>
