@@ -86,10 +86,19 @@ class player {
     if (matches === 0) {
       setTimeout(function () {
         if (p1.playerWin > p2.playerWin)
-          alert(`The winner of the contest is ${p1.name}`);
+          // alert(`The winner of the contest is ${p1.name}`);
+          showMessage(
+            "CONGRATULATIONS",
+            `The winner of the contest is ${p1.name}`
+          );
         else if (p2.playerWin > p1.playerWin)
-          alert(`The winner of the contest is ${p2.name}`);
-        else alert("the contest is draw");
+          // alert(`The winner of the contest is ${p2.name}`);
+          showMessage(
+            "CONGRATULATIONS",
+            `The winner of the contest is ${p2.name}`
+          );
+        //  alert("the contest is draw");
+        else showMessage("Try again", "the contest is draw");
         player.masterReset();
       }, 310);
     }
@@ -117,7 +126,8 @@ class player {
     matches--;
     setTimeout(function () {
       m.value = matches;
-      alert(`${p.name} won `);
+      // alert(`${p.name} won `);
+      showMessage("Hurray", `${p.name} won`);
       player.matchReset();
     }, 300);
   }
@@ -147,7 +157,7 @@ class player {
       player.checkMatches();
       return;
     }
-    console.log(px.p);
+    // console.log(px.p);
     player.flip();
     changeHoverBackground();
   }
@@ -191,7 +201,8 @@ function myFunction(event) {
     matches--;
     setTimeout(function () {
       m.value = matches;
-      alert("match draw");
+      // alert("match draw");
+      showMessage("Result", "match draw");
       player.matchReset();
     }, 300);
     player.checkMatches();
@@ -222,21 +233,28 @@ function play() {
   if (gameStart) return;
   matches = m.value;
   if (matches <= 0) {
-    alert("please Enter the No. of matches to play........");
+    // alert("please Enter the No. of matches to play........");
+    showMessage("careful", "please Enter the No. of matches to play........");
     return;
   }
   msg.textContent = "Matches Remaining :";
   gameStart = true;
   m.disabled = true;
   const tds = document.querySelectorAll("td");
-  tds.forEach((td) => {
-    td.style.setProperty(
-      "--td-background-color",
-      "linear-gradient(90deg, rgb(255 207 207) 30%, rgb(245 183 183) 100%)"
-    );
-  });
+  changeHoverBackground();
 }
 
 function mr() {
   player.masterReset();
+}
+
+// (function ($) {
+//   showMessage = function (message) {
+//     // "use strict";
+//     swal(message);
+//   };
+// })(jQuery);
+
+function showMessage(comment, message) {
+  Swal.fire(comment, message);
 }
