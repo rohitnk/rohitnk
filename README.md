@@ -1,4 +1,4 @@
 - 👋 Hi, I’m @Rohit Kalpavruksha
 - 👀 I’m interested in programming, Electronics.
-- 🌱 I’m currently learning JAVA, NodeJs, React, etc.
+- 🌱 I’m currently learning JS, JAVA, NodeJs, React, etc.
 - 📫 How to reach me rohitkalpavruksha@gmail.com
