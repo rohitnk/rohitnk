@@ -4,6 +4,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #f7f8f8; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #acbb78,
+    #f7f8f8
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #454363,
+    #b8f9f9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #table {
@@ -17,7 +28,7 @@ body {
   );
   border-radius: 25px;
   padding: 50px;
-  border: 3px solid black;
+  border: 4px solid rgb(255, 255, 255);
   border-spacing: 10px;
   margin: 1rem auto;
   border-collapse: separate;
@@ -37,8 +48,8 @@ td {
   height: 100px;
   width: 100px;
   padding: 1rem 1.2rem;
-  border-radius: 10px;
-  border: 3px solid white;
+  border-radius: 20px;
+  border: 5px solid #ffffff;
   /* background: white; */
 }
 
@@ -53,14 +64,10 @@ td:hover,
   margin-left: 200px;
   height: 500px;
   width: 300px;
-  border: 3px solid black;
+  border: 5px solid rgb(255, 255, 255);
   border-radius: 35px;
-  background: rgb(241, 82, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(241, 82, 255, 1) 0%,
-    rgba(95, 255, 253, 1) 100%
-  );
+  background: #b8a9ff;
+  background: linear-gradient(to top, #b8a9ff, #7dabffad, #a6fdff);
 }
 
 #player1 {
@@ -116,24 +123,39 @@ button:hover {
 }
 
 input {
-  margin-top: 25px;
+  /* margin-top: 25px;
   width: 50px;
   height: 20px;
   border-radius: 5px;
   border: white;
+  margin-left: 5px; */
+  background: #4b80ad;
+
+  font-size: 19px;
+  margin-top: 22px;
+  width: 42px;
+  height: 22px;
+  border-radius: 5px;
+  border: white;
+  text-shadow: 0px 0px 11px rgb(0 0 0);
+  color: white;
+
   margin-left: 5px;
 }
 
 span {
+  font-size: 19px;
+  /* box-shadow: 0px 0px 36px 1px rgba(255, 255, 255, 0.67); */
+  text-shadow: 0px 0px 11px rgb(0 0 0);
   padding-left: 20px;
-  color: rgb(80, 78, 78);
+  color: white;
   font-family: cursive;
 }
 
 #wincount {
   margin: 10px;
   margin-top: 25px;
-  border: 2px solid white;
+  border: 3px solid white;
   padding-bottom: 20px;
   background-color: rgb(73, 146, 255);
   border-radius: 25px;
