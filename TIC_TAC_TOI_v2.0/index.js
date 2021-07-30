@@ -79,7 +79,7 @@ class player {
     gameStart = false;
     msg.textContent = "Enter No. of Matches:";
     resetBackground();
-    console.log("master reset complete.");
+    console.log("Master reset complete.");
   }
 
   static checkMatches() {
@@ -98,7 +98,7 @@ class player {
             `The winner of the contest is ${p2.name}`
           );
         //  alert("the contest is draw");
-        else showMessage("Try again", "the contest is draw");
+        else showMessage("TRY AGAIN", "the contest is draw");
         player.masterReset();
       }, 310);
     }
@@ -126,8 +126,7 @@ class player {
     matches--;
     setTimeout(function () {
       m.value = matches;
-      // alert(`${p.name} won `);
-      showMessage("Hurray", `${p.name} won`);
+      showMessage("HURRAY", `${p.name} won...🎉🎉🎉🎉🎉`);
       player.matchReset();
     }, 300);
   }
@@ -157,7 +156,6 @@ class player {
       player.checkMatches();
       return;
     }
-    // console.log(px.p);
     player.flip();
     changeHoverBackground();
   }
@@ -202,7 +200,7 @@ function myFunction(event) {
     setTimeout(function () {
       m.value = matches;
       // alert("match draw");
-      showMessage("Result", "match draw");
+      showMessage("RESULT", "match draw...");
       player.matchReset();
     }, 300);
     player.checkMatches();
@@ -234,7 +232,7 @@ function play() {
   matches = m.value;
   if (matches <= 0) {
     // alert("please Enter the No. of matches to play........");
-    showMessage("careful", "please Enter the No. of matches to play........");
+    showMessage("WARNING", "please Enter the No. of matches to play........");
     return;
   }
   msg.textContent = "Matches Remaining :";
