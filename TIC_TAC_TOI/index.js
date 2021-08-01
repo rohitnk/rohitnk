@@ -122,8 +122,8 @@ function myFunction(event) {
     matches--;
     setTimeout(function () {
       m.value = matches;
-      // alert("match draw");
-      showMessage("RESULT", "match draw...");
+      alert("match draw");
+      // showMessage("RESULT", "match draw...");
 
       matchReset();
     }, 300);
@@ -136,13 +136,13 @@ function checkMatches() {
   if (matches === 0) {
     setTimeout(function () {
       if (player1Win > player2Win)
-        // alert("The winner of the contest is Player 1");
-        showMessage("CONGRATULATIONS", `The winner of the contest is Player 1`);
+        alert("The winner of the contest is Player 1");
+      // showMessage("CONGRATULATIONS", `The winner of the contest is Player 1`);
       else if (player2Win > player1Win)
-        // alert("The winner of the contest is Player 2");
-        showMessage("CONGRATULATIONS", `The winner of the contest is Player 2`);
-      // alert("the contest is draw");
-      else showMessage("TRY AGAIN", "the contest is draw");
+        alert("The winner of the contest is Player 2");
+      // showMessage("CONGRATULATIONS", `The winner of the contest is Player 2`);
+      else alert("the contest is draw");
+      //  showMessage("TRY AGAIN", "the contest is draw");
       masterReset();
     }, 310);
   }
@@ -176,8 +176,8 @@ function hurray(p) {
   matches--;
   setTimeout(function () {
     m.value = matches;
-    // alert(`${p} won `);
-    showMessage("HURRAY", `${p} won...🎉🎉🎉🎉🎉`);
+    alert(`${p} won `);
+    // showMessage("HURRAY", `${p} won...🎉🎉🎉🎉🎉`);
 
     matchReset();
   }, 300);
@@ -187,8 +187,8 @@ function play() {
   if (gameStart) return;
   matches = m.value;
   if (matches <= 0) {
-    // alert("please Enter the No. of matches to play........");
-    showMessage("WARNING", "please Enter the No. of matches to play........");
+    alert("please Enter the No. of matches to play........");
+    // showMessage("WARNING", "please Enter the No. of matches to play........");
 
     return;
   }
@@ -223,9 +223,10 @@ function changeHoverBackground() {
   }
 }
 
-function showMessage(comment, message) {
-  Swal.fire(comment, message);
-}
+//* for SWEET ALERT
+// function showMessage(comment, message) {
+//   Swal.fire(comment, message);
+// }
 
 // Swal({
 //   title: `I will not change html's and body's height`,
