@@ -86,18 +86,15 @@ class player {
     if (matches === 0) {
       setTimeout(function () {
         if (p1.playerWin > p2.playerWin)
-          // alert(`The winner of the contest is ${p1.name}`);
           showMessage(
             "CONGRATULATIONS",
             `The winner of the contest is ${p1.name}`
           );
         else if (p2.playerWin > p1.playerWin)
-          // alert(`The winner of the contest is ${p2.name}`);
           showMessage(
             "CONGRATULATIONS",
             `The winner of the contest is ${p2.name}`
           );
-        //  alert("the contest is draw");
         else showMessage("TRY AGAIN", "the contest is draw");
         player.masterReset();
       }, 310);
@@ -199,7 +196,6 @@ function myFunction(event) {
     matches--;
     setTimeout(function () {
       m.value = matches;
-      // alert("match draw");
       showMessage("RESULT", "match draw...");
       player.matchReset();
     }, 300);
@@ -231,7 +227,6 @@ function play() {
   if (gameStart) return;
   matches = m.value;
   if (matches <= 0) {
-    // alert("please Enter the No. of matches to play........");
     showMessage("WARNING", "please Enter the No. of matches to play........");
     return;
   }
@@ -247,5 +242,6 @@ function mr() {
 }
 
 function showMessage(comment, message) {
-  Swal.fire(comment, message);
+  // Swal.fire(comment, message);
+  alert(`${comment}  ${message}`);
 }

@@ -1,0 +1,166 @@
+body {
+  width: 1650px;
+  height: 850px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f8f8; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #acbb78,
+    #f7f8f8
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #454363,
+    #b8f9f9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#table {
+  box-shadow: 19px 22px 34px -2px rgba(0, 0, 0, 0.66);
+  background: rgb(164, 242, 247);
+  background: linear-gradient(
+    90deg,
+    rgba(164, 242, 247, 1) 10%,
+    rgba(164, 242, 247, 1) 24%,
+    rgba(95, 195, 255, 1) 81%
+  );
+  border-radius: 25px;
+  padding: 50px;
+  border: 4px solid rgb(255, 255, 255);
+  border-spacing: 10px;
+  margin: 1rem auto;
+  border-collapse: separate;
+}
+
+.player {
+  box-shadow: 19px 22px 34px -2px rgba(0, 0, 0, 0.66);
+  height: 100px;
+  width: 100px;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  border: 3px solid white;
+  background: rgb(255, 249, 249);
+}
+td {
+  box-shadow: 19px 22px 34px -2px rgba(0, 0, 0, 0.66);
+  height: 100px;
+  width: 100px;
+  padding: 1rem 1.2rem;
+  border-radius: 20px;
+  border: 5px solid #ffffff;
+  /* background: white; */
+}
+
+td:hover,
+.player:hover {
+  transition: 0.22s ease-in-out;
+  transform: translate(3px, 3px);
+  background: var(--td-background-color);
+}
+
+.controlPanel {
+  margin-left: 200px;
+  height: 500px;
+  width: 300px;
+  border: 5px solid rgb(255, 255, 255);
+  border-radius: 35px;
+  background: #b8a9ff;
+  background: linear-gradient(to top, #b8a9ff, #7dabffad, #a6fdff);
+}
+
+#player1 {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 142, 142, 1) 30%,
+    rgba(183, 4, 4, 1) 100%
+  );
+}
+
+.playerInfo {
+  display: flex;
+  align-items: center;
+}
+
+#player2 {
+  background: linear-gradient(
+    90deg,
+    rgba(213, 247, 164, 1) 8%,
+    rgba(0, 255, 38, 1) 58%
+  );
+}
+
+.player {
+  border: 2px solid white;
+  height: 10px;
+  width: 10px;
+}
+
+button {
+  margin-left: 20px;
+  margin-left: 31%;
+  margin-top: 15px;
+  border-color: white;
+  font-family: cursive;
+  height: 50px;
+  box-shadow: 17px 20px 20px -2px rgba(0, 0, 0, 0.78);
+  border-radius: 120px;
+  width: 100px;
+  background-color: #48bfe3;
+  color: white;
+}
+button:hover {
+  /* background-color: #7400b8; */
+  transition: 0.1s ease-in-out;
+  transform: translate(3px, 3px);
+  background-color: white;
+  color: black;
+}
+
+.playerInfo > * {
+  margin: 10px;
+}
+
+input {
+  /* margin-top: 25px;
+    width: 50px;
+    height: 20px;
+    border-radius: 5px;
+    border: white;
+    margin-left: 5px; */
+  background: #4b80ad;
+
+  font-size: 19px;
+  margin-top: 22px;
+  width: 42px;
+  height: 22px;
+  border-radius: 5px;
+  border: white;
+  text-shadow: 0px 0px 11px rgb(0 0 0);
+  color: white;
+
+  margin-left: 5px;
+}
+
+span {
+  font-size: 19px;
+  /* box-shadow: 0px 0px 36px 1px rgba(255, 255, 255, 0.67); */
+  text-shadow: 0px 0px 11px rgb(0 0 0);
+  padding-left: 20px;
+  color: white;
+  font-family: cursive;
+}
+
+#wincount {
+  margin: 10px;
+  margin-top: 25px;
+  border: 3px solid white;
+  padding-bottom: 20px;
+  background-color: rgb(73, 146, 255);
+  border-radius: 25px;
+}
+
+body.swal2-height-auto {
+  height: 850px !important;
+}
