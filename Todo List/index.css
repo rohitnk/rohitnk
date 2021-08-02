@@ -47,6 +47,8 @@ input {
   border-radius: 7px;
 }
 #listContainer {
+  border: 5px solid white;
+  padding: 025px 50px 25px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,6 +56,7 @@ input {
   width: 50%;
   height: auto;
   min-height: 50px;
+  transition: all 0.4s ease-out;
 }
 .listItem {
   position: relative;
