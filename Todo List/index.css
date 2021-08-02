@@ -2,28 +2,44 @@ body {
   height: 100vh;
   width: 100vw;
   font: 400 13.3333px Arial;
+  background: rgb(224, 210, 226);
+  background: linear-gradient(
+    0deg,
+    rgba(224, 210, 226, 1) 15%,
+    rgba(209, 153, 255, 1) 100%
+  );
 }
 
 .mainContainer {
-  /* height: 100vh;
-  width: 100vw; */
+  /* height: 100vh; */
+  width: 50vw;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
+  margin-bottom: 50px;
   /* border: 2px solid black; */
 }
 .viewPort {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 input {
+  background: rgb(237, 112, 255);
+  background: linear-gradient(
+    45deg,
+    rgb(134 139 231) 15%,
+    rgb(235 186 255) 100%
+  );
+  color: white;
   height: 40px;
-  width: 620px;
+  width: 90%;
   border-radius: 10px;
   font-size: 20px;
+  border: 5px solid white;
 }
 #add {
   height: 47px;
@@ -35,30 +51,83 @@ input {
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  width: 725px;
-  border: 2px solid black;
+  width: 50%;
   height: auto;
   min-height: 50px;
 }
 .listItem {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90%;
-  height: 40px;
-  margin-top: 12px;
+  width: 100%;
+  height: 50px;
   margin-bottom: 12px;
-
   border-radius: 15px;
-  border: 2px solid black;
+  border: 5px solid white;
+  background: rgb(134, 247, 231);
+  background: linear-gradient(90deg, rgb(177 100 255) 21%, rgb(118 73 255) 84%);
 }
 .listItem p {
   font-size: 20px;
   margin: 20px;
+  color: white;
+  z-index: 2;
 }
 button {
   margin: 10px;
+  border: 3px solid white;
 }
 input {
   text-indent: 10px;
+}
+
+.slide-fade .listItem {
+  transition: all 0.4s ease-out;
+  opacity: 0;
+}
+.slide-fade .listItem.show {
+  opacity: 1;
+}
+
+::placeholder {
+  color: #ffffff73;
+  opacity: 1;
+}
+
+.listItem button {
+  position: relative;
+  height: 3em;
+  width: 7em;
+  border-radius: 6em;
+  z-index: 2;
+}
+
+.listItem::before {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.8s ease-in-out;
+  opacity: 1;
+}
+
+.listItem:hover::before {
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: 0.8s ease-in-out;
+  opacity: 1;
+}
+
+.listItem::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 10;
+  right: 10;
+  bottom: 10;
+  left: 10;
+  border-radius: 10px;
+  inset: 0 0 0 0;
+  background: #ff00bc8c;
+  z-index: 1;
+  transition: transform 1s cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }

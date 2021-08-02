@@ -14,13 +14,19 @@ function createTemplet(msg) {
   btn.setAttribute("onclick", `listItm.remove(${count})`);
   const btnDiv = document.createElement("div");
   btnDiv.appendChild(btn);
-  const editBtn = document.createElement("button");
-  editBtn.textContent = "Edit";
-  btnDiv.appendChild(editBtn);
+  // const editBtn = document.createElement("button");
+  // editBtn.textContent = "Edit";
+  // btnDiv.appendChild(editBtn);
   div.appendChild(btnDiv);
-  p.textContent = msg;
+  // console.log(msg.slice(0, 50), msg.length);
+  if (msg.length > 50) {
+    p.textContent = `${msg.slice(0, 50)}......`;
+  } else p.textContent = msg;
   listContainer.appendChild(div);
   count++;
+  setTimeout(function () {
+    div.className = div.className + " show";
+  }, 10);
 }
 
 count = 0;
@@ -33,8 +39,10 @@ class listItm {
   }
 
   static remove(a) {
-    list.pop(a);
-    mainList.pop(a);
+    list[a] = "";
+    mainList[a] = "";
+    console.log("mainlist = " + JSON.stringify(mainList));
+    console.log("list  =  " + list);
     setToLocal();
     const toRemove = document.getElementById(a);
     toRemove.remove();
@@ -45,7 +53,7 @@ class listItm {
 function addToList() {
   if (list.includes(task.value)) return;
   list.push(task.value);
-  a = new listItm(task.value);
+  let a = new listItm(task.value);
   mainList.push(a);
   setToLocal();
 }
@@ -53,7 +61,8 @@ function addToList() {
 if (localStorage.storedList) {
   let stored_List = getFromLocal();
   stored_List.forEach((element) => {
-    a = new listItm();
+    if (element.message == "" || element.message == undefined) return;
+    let a = new listItm();
     a.message = element.message;
     mainList.push(a);
     createTemplet(element.message);
